@@ -2,4 +2,11 @@
 <p>
   Web components library based on the Stencil.js
 </p>
-<h2>Getting Started</h2>
+<h2>Implemented components</h2>
+<p>
+  <ul>
+    <li></li>
+    <li></li>
+
+  </ul>
+</p>
