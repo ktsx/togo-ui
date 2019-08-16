@@ -4,9 +4,4 @@
 </p>
 <h2>Implemented components</h2>
 <p>
-  <ul>
-    <li></li>
-    <li></li>
-
-  </ul>
 </p>
