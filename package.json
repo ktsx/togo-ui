@@ -1,27 +1,27 @@
 {
   "name": "togo-ui",
-  "version": "0.0.0",
-  "description": "Web components library",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/togo-ui/togo-ui.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "devDependencies": {
-    "@stencil/core": "^1.2.5"
+    "@stencil/core": "^1.0.7"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ktsx/togo-ui.git"
-  },
-  "keywords": [
-    "togo-ui",
-    "web",
-    "components"
-  ],
-  "author": "ktsx",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ktsx/togo-ui/issues"
-  },
-  "homepage": "https://github.com/ktsx/togo-ui#readme"
+  "license": "MIT"
 }
