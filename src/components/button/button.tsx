@@ -33,8 +33,17 @@ export class Button implements ComponentInterface {
    */
   @Prop() theme: ButtonTheme = "yellow";
 
+  /**
+   * Emitted when the button was clicked.
+   */
   @Event() tgClick: EventEmitter;
+  /**
+   * Emitted when the mouse is over the button.
+   */
   @Event() tgHover: EventEmitter;
+  /**
+   * Emitted when the button is focused.
+   */
   @Event() tgFocus: EventEmitter;
 
   componentDidLoad() {

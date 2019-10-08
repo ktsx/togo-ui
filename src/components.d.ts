@@ -64,8 +64,17 @@ declare namespace LocalJSX {
     * Sets disabled status
     */
     'isDisabled'?: boolean;
+    /**
+    * Emitted when the button was clicked.
+    */
     'onTgClick'?: (event: CustomEvent<any>) => void;
+    /**
+    * Emitted when the button is focused.
+    */
     'onTgFocus'?: (event: CustomEvent<any>) => void;
+    /**
+    * Emitted when the mouse is over the button.
+    */
     'onTgHover'?: (event: CustomEvent<any>) => void;
     /**
     * Sets button size
