@@ -4,4 +4,5 @@
 </p>
 <h2>Implemented components</h2>
 <p>
+<ul><li>Button Component</li></ul>
 </p>
