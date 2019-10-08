@@ -1,17 +1,64 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Togo UI Components Starter Page</title>
 
-  <script type="module" src="/build/togo-ui.esm.js"></script>
-  <script nomodule src="/build/togo-ui.js"></script>
+    <script type="module" src="/build/togo-ui.esm.js"></script>
+    <script nomodule src="/build/togo-ui.js"></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <tg-button size="small">Yellow</tg-button>
+    <tg-button size="small" theme="dark">Dark</tg-button>
+    <tg-button size="small" theme="blue">Blue</tg-button>
+    <tg-button size="small" theme="green">Green</tg-button>
+    <tg-button size="small" theme="outlined-yellow">Yellow</tg-button>
+    <tg-button size="small" theme="outlined-dark">Dark</tg-button>
+    <tg-button size="small" theme="outlined-blue">Blue</tg-button>
+    <tg-button size="small" theme="outlined-green">Green</tg-button>
 
-</head>
-<body>
+    <br />
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <tg-button>Yellow</tg-button>
+    <tg-button theme="dark">Dark</tg-button>
+    <tg-button theme="blue">Blue</tg-button>
+    <tg-button theme="green">Green</tg-button>
+    <tg-button theme="outlined-yellow">Yellow</tg-button>
+    <tg-button theme="outlined-dark">Dark</tg-button>
+    <tg-button theme="outlined-blue">Blue</tg-button>
+    <tg-button theme="outlined-green">Green</tg-button>
 
-</body>
+    <br />
+
+    <tg-button size="large">Yellow</tg-button>
+    <tg-button size="large" theme="dark">Dark</tg-button>
+    <tg-button size="large" theme="blue">Blue</tg-button>
+    <tg-button size="large" theme="green">Green</tg-button>
+    <tg-button size="large" theme="outlined-yellow">Yellow</tg-button>
+    <tg-button size="large" theme="outlined-dark">Dark</tg-button>
+    <tg-button size="large" theme="outlined-blue">Blue</tg-button>
+    <tg-button size="large" theme="outlined-green">Green</tg-button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.querySelector("tg-button") || null;
+        if (btn) {
+          btn.addEventListener("tgClick", event => {
+            console.log("Event", event);
+          });
+        }
+      });
+    </script>
+  </body>
 </html>
