@@ -1,0 +1,130 @@
+@import '../../assets/styles/colors.vars.scss';
+@import './button.mixins.scss';
+
+$disabled-text-color: #cccccc;
+
+:host {
+  position: relative;
+  width: auto;
+  display: inline-block;
+  background: transparent;
+  overflow: hidden;
+  font-size: 13px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 2px;
+
+  .btn {
+    cursor: pointer;
+    user-select: none;
+    padding: 0 25px;
+    font-size: inherit;
+    border: 2px transparent solid;
+    -webkit-transition: .2s ease-out;
+    transition: .2s ease-out;
+    text-transform: uppercase;
+    white-space: normal !important;
+    word-wrap: break-word;
+    outline: none;
+    background-color: transparent;
+    display: block;
+    letter-spacing: 0.078em;
+
+    &:disabled {
+      cursor: default !important;
+    }
+
+    &--yellow {
+      @include creteTheme($yellow, $yellow, #666666);
+
+      &:disabled {
+        @include creteTheme($disabled-color, $disabled-color, $disabled-text-color);
+      }
+    }
+
+    &--blue {
+      @include creteTheme($blue, $blue, #fdfdfd);
+
+      &:disabled {
+        @include creteTheme($disabled-color, $disabled-color, $disabled-text-color);
+      }
+    }
+
+    &--green {
+      @include creteTheme($green, $green, #fdfdfd);
+
+      &:disabled {
+        @include creteTheme($disabled-color, $disabled-color, $disabled-text-color);
+      }
+    }
+
+    &--dark {
+      @include creteTheme(#333333, #333333, #fdfdfd);
+      --ripple-color: #333333;
+
+      &:disabled {
+        @include creteTheme($disabled-color, $disabled-color, $disabled-text-color);
+      }
+    }
+
+    &--outlined-yellow {
+      @include creteOutlinedTheme($yellow, #666666);
+      --ripple-color: #{$yellow};
+
+      &:disabled {
+        @include creteOutlinedTheme($disabled-color, $disabled-text-color);
+      }
+    }
+
+    &--outlined-blue {
+      @include creteOutlinedTheme($blue, $blue);
+
+      &:disabled {
+        @include creteOutlinedTheme($disabled-color, $disabled-text-color);
+      }
+    }
+
+    &--outlined-green {
+      @include creteOutlinedTheme($green, $green);
+
+      &:disabled {
+        @include creteOutlinedTheme($disabled-color, $disabled-text-color);
+      }
+    }
+
+    &--outlined-dark {
+      @include creteOutlinedTheme(#666666, #666666);
+
+      &:disabled {
+        @include creteOutlinedTheme($disabled-color, $disabled-text-color);
+      }
+    }
+  }
+}
+
+:host([size="small"]) {
+  height: 32px;
+  font-size: 13px;
+
+  .btn {
+    height: 32px;
+  }
+}
+
+:host([size="medium"]) {
+  height: 40px;
+  font-size: 13px;
+
+  .btn {
+    height: 40px;
+  }
+}
+
+:host([size="large"]) {
+  height: 48px;
+  font-size: 16px;
+
+  .btn {
+    height: 48px;
+  }
+}

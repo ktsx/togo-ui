@@ -6,56 +6,86 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  ButtonSize,
+  ButtonTheme,
+} from './components/button/button.types';
 
 export namespace Components {
-  interface MyComponent {
+  interface TgButton {
     /**
-    * The first name
+    * Sets disabled status
     */
-    'first': string;
+    'isDisabled': boolean;
     /**
-    * The last name
+    * Sets button size
     */
-    'last': string;
+    'size': ButtonSize;
     /**
-    * The middle name
+    * Sets the theme
     */
-    'middle': string;
+    'theme': ButtonTheme;
+  }
+  interface TgRippleEffect {
+    /**
+    * Adds the ripple effect to the parent element.
+    */
+    'addRipple': (x: number, y: number) => Promise<() => void>;
+    /**
+    * Sets the type of ripple-effect:  - `bounded`: the ripple effect expands from the user's click position - `unbounded`: the ripple effect expands from the center of the button and overflows the container.  NOTE: Surfaces for bounded ripples should have the overflow property set to hidden, while surfaces for unbounded ripples should have it set to visible.
+    */
+    'type': "bounded" | "unbounded";
   }
 }
 
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLTgButtonElement extends Components.TgButton, HTMLStencilElement {}
+  var HTMLTgButtonElement: {
+    prototype: HTMLTgButtonElement;
+    new (): HTMLTgButtonElement;
+  };
+
+  interface HTMLTgRippleEffectElement extends Components.TgRippleEffect, HTMLStencilElement {}
+  var HTMLTgRippleEffectElement: {
+    prototype: HTMLTgRippleEffectElement;
+    new (): HTMLTgRippleEffectElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'tg-button': HTMLTgButtonElement;
+    'tg-ripple-effect': HTMLTgRippleEffectElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
+  interface TgButton extends JSXBase.HTMLAttributes<HTMLTgButtonElement> {
     /**
-    * The first name
+    * Sets disabled status
     */
-    'first'?: string;
+    'isDisabled'?: boolean;
+    'onTgClick'?: (event: CustomEvent<any>) => void;
+    'onTgFocus'?: (event: CustomEvent<any>) => void;
+    'onTgHover'?: (event: CustomEvent<any>) => void;
     /**
-    * The last name
+    * Sets button size
     */
-    'last'?: string;
+    'size'?: ButtonSize;
     /**
-    * The middle name
+    * Sets the theme
     */
-    'middle'?: string;
+    'theme'?: ButtonTheme;
+  }
+  interface TgRippleEffect extends JSXBase.HTMLAttributes<HTMLTgRippleEffectElement> {
+    /**
+    * Sets the type of ripple-effect:  - `bounded`: the ripple effect expands from the user's click position - `unbounded`: the ripple effect expands from the center of the button and overflows the container.  NOTE: Surfaces for bounded ripples should have the overflow property set to hidden, while surfaces for unbounded ripples should have it set to visible.
+    */
+    'type'?: "bounded" | "unbounded";
   }
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
+    'tg-button': TgButton;
+    'tg-ripple-effect': TgRippleEffect;
   }
 }
 

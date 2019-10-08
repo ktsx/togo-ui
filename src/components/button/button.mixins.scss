@@ -1,0 +1,9 @@
+@mixin creteTheme($background-color, $border-color, $text-color) {
+    background-color: $background-color!important;
+    border-color: $border-color!important;
+    color: $text-color!important;
+}
+@mixin creteOutlinedTheme($border-color, $text-color) {
+    border: 2px $border-color solid !important;
+    color: $text-color !important;
+}
